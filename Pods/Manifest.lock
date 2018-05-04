@@ -1,0 +1,15 @@
+PODS:
+  - InteractiveSideMenu (2.3)
+  - VerticalSlider (1.0.3)
+
+DEPENDENCIES:
+  - InteractiveSideMenu
+  - VerticalSlider
+
+SPEC CHECKSUMS:
+  InteractiveSideMenu: d503a508c6d62a4d5d4372d9fb9e1795637a8e45
+  VerticalSlider: 4dacdf1ba587956142e12087f96922166ec2b58d
+
+PODFILE CHECKSUM: 9bad16163b59be920383d0d15417a8b528fecd9f
+
+COCOAPODS: 1.4.0

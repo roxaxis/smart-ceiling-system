@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CZd-YA-efq">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--About-->
+        <scene sceneID="Oup-J4-z5t">
+            <objects>
+                <viewController storyboardIdentifier="About" title="About" id="CZd-YA-efq" customClass="AboutViewController" customModule="EagleEyeProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kwf-iX-j6X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cO2-Th-HWl">
+                                <rect key="frame" x="6" y="20" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="xOO-oi-xhd"/>
+                                </constraints>
+                                <state key="normal" image="Menu"/>
+                                <connections>
+                                    <action selector="openMenu:" destination="CZd-YA-efq" eventType="touchUpInside" id="VHG-EG-hvb"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KHAS-3" translatesAutoresizingMaskIntoConstraints="NO" id="JRy-XL-LMa">
+                                <rect key="frame" x="67" y="48" width="240" height="220"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eSc-1G-SDV">
+                                <rect key="frame" x="16" y="297" width="343" height="350"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Smart Ceiling System,  Taner Arsan, Associate Professor Orçun Kepez, Associate Professor Ahmet Hasırcıoğlu Özgür Çağlar Mataracı Eray Eroğlu Mehmet Alihan Bilgin</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="cO2-Th-HWl" firstAttribute="leading" secondItem="ceM-OX-qIy" secondAttribute="leading" constant="6" id="6uP-Yp-5uI"/>
+                            <constraint firstItem="eSc-1G-SDV" firstAttribute="top" secondItem="JRy-XL-LMa" secondAttribute="bottom" constant="29" id="BNS-EF-ZRR"/>
+                            <constraint firstItem="cO2-Th-HWl" firstAttribute="top" secondItem="ceM-OX-qIy" secondAttribute="top" id="DpS-yv-KbO"/>
+                            <constraint firstAttribute="bottom" secondItem="eSc-1G-SDV" secondAttribute="bottom" constant="20" symbolic="YES" id="HsI-En-J7Z"/>
+                            <constraint firstItem="ceM-OX-qIy" firstAttribute="trailing" secondItem="cO2-Th-HWl" secondAttribute="trailing" constant="325" id="Iou-JD-eHE"/>
+                            <constraint firstItem="eSc-1G-SDV" firstAttribute="leading" secondItem="kwf-iX-j6X" secondAttribute="leadingMargin" id="KNv-If-tX1"/>
+                            <constraint firstItem="JRy-XL-LMa" firstAttribute="top" secondItem="ceM-OX-qIy" secondAttribute="top" constant="28" id="Z6S-A1-KaX"/>
+                            <constraint firstItem="JRy-XL-LMa" firstAttribute="centerX" secondItem="eSc-1G-SDV" secondAttribute="centerX" id="ZWW-ad-DKW"/>
+                            <constraint firstItem="JRy-XL-LMa" firstAttribute="leading" secondItem="cO2-Th-HWl" secondAttribute="trailing" constant="17" id="bQp-A0-hqh"/>
+                            <constraint firstItem="eSc-1G-SDV" firstAttribute="trailing" secondItem="kwf-iX-j6X" secondAttribute="trailingMargin" id="v4g-TU-oov"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ceM-OX-qIy"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xMt-v7-Wd7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uur-fy-I9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="460" y="-438.53073463268368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="KHAS-3" width="220" height="220"/>
+        <image name="Menu" width="24" height="17"/>
+    </resources>
+</document>

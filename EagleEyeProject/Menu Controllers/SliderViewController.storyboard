@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kCe-tA-DYp">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Slider-->
+        <scene sceneID="XXc-3z-hj0">
+            <objects>
+                <viewController storyboardIdentifier="Slider" title="Slider" id="kCe-tA-DYp" customClass="SliderViewController" customModule="EagleEyeProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bee-0f-QMn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8q9-2m-oaU">
+                                <rect key="frame" x="6" y="20" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Glz-VZ-VWj"/>
+                                </constraints>
+                                <state key="normal" image="Menu"/>
+                                <connections>
+                                    <action selector="openMenu:" destination="kCe-tA-DYp" eventType="touchUpInside" id="F9O-NP-UNO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="posLABEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9J5-8Y-o1O">
+                                <rect key="frame" x="257" y="626" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="p8q-9D-SkY">
+                                <rect key="frame" x="14" y="319" width="347" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="638-KG-Icd"/>
+                                </constraints>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position of the System: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJY-7c-FsI">
+                                <rect key="frame" x="16" y="626" width="181" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="9J5-8Y-o1O" firstAttribute="leading" secondItem="FJY-7c-FsI" secondAttribute="trailing" constant="60" id="31O-J4-gPo"/>
+                            <constraint firstItem="8q9-2m-oaU" firstAttribute="leading" secondItem="Kc9-m1-lM2" secondAttribute="leading" constant="6" id="5E4-Dr-zIW"/>
+                            <constraint firstItem="FJY-7c-FsI" firstAttribute="baseline" secondItem="9J5-8Y-o1O" secondAttribute="baseline" id="BUI-R9-4rs"/>
+                            <constraint firstItem="Kc9-m1-lM2" firstAttribute="trailing" secondItem="8q9-2m-oaU" secondAttribute="trailing" constant="325" id="Mfl-w6-iq0"/>
+                            <constraint firstItem="p8q-9D-SkY" firstAttribute="leading" secondItem="bee-0f-QMn" secondAttribute="leadingMargin" id="WTR-t7-ieN"/>
+                            <constraint firstItem="p8q-9D-SkY" firstAttribute="leading" secondItem="FJY-7c-FsI" secondAttribute="leading" id="ePw-A3-09k"/>
+                            <constraint firstItem="8q9-2m-oaU" firstAttribute="top" secondItem="Kc9-m1-lM2" secondAttribute="top" id="g2c-nW-oYR"/>
+                            <constraint firstItem="p8q-9D-SkY" firstAttribute="centerY" secondItem="bee-0f-QMn" secondAttribute="centerY" id="lUe-ox-Cru"/>
+                            <constraint firstAttribute="bottom" secondItem="FJY-7c-FsI" secondAttribute="bottom" constant="20" symbolic="YES" id="qw3-Cn-LZl"/>
+                            <constraint firstItem="p8q-9D-SkY" firstAttribute="trailing" secondItem="bee-0f-QMn" secondAttribute="trailingMargin" id="xhA-aw-3dw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kc9-m1-lM2"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fSg-K2-jW4"/>
+                    <connections>
+                        <outlet property="positionLabel" destination="9J5-8Y-o1O" id="XQy-bT-DUj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Obq-0h-SGM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="460" y="-438.53073463268368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Menu" width="24" height="17"/>
+    </resources>
+</document>
