@@ -114,7 +114,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the desired cm (+ or - for direction)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NKM-rO-OFm">
                                         <rect key="frame" x="8" y="7" width="359" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="send"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="send" textContentType="tel"/>
                                         <connections>
                                             <outlet property="delegate" destination="EEx-bJ-XFj" id="NfG-sn-WIR"/>
                                         </connections>

@@ -81,7 +81,7 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
     
     override func viewWillAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
-        positionLabel.text = String (263.5 + Double(defaults.integer(forKey: "location"))) + " cm"
+        positionLabel.text = String (262 + Double(defaults.integer(forKey: "location"))) + " cm"
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
@@ -188,8 +188,6 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
         }
             let downLimit = locationOfTheSystem + msgInCm! >= 0
         
-        
-       
             if (upLimit && downLimit) {
                 serial.sendMessageToDevice(String(msgInSteps))
                 locationOfTheSystem += msgInCm!
@@ -214,7 +212,7 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
         let defaults = UserDefaults.standard
         defaults.set(locationOfTheSystem, forKey: "location")
         
-        positionLabel.text = String (263.5 + Double(defaults.integer(forKey: "location"))) + " cm"
+        positionLabel.text = String (262 + Double(defaults.integer(forKey: "location"))) + " cm"
         
         return true
     }

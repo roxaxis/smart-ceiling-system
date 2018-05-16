@@ -35,7 +35,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eSc-1G-SDV">
                                 <rect key="frame" x="16" y="297" width="343" height="350"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Smart Ceiling System,  Taner Arsan, Associate Professor Orçun Kepez, Associate Professor Ahmet Hasırcıoğlu Özgür Çağlar Mataracı Eray Eroğlu Mehmet Alihan Bilgin</string>
+                                <string key="text">Smart Ceiling System,  Taner Arsan, Assistant Professor Orçun Kepez, Assistant Professor Ahmet Hasırcıoğlu Özgür Çağlar Mataracı Eray Eroğlu Mehmet Alihan Bilgin</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
