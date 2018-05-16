@@ -5,9 +5,7 @@ import VerticalSlider
 
 final class SerialViewController: UIViewController, UITextFieldDelegate, BluetoothSerialDelegate, Storyboardable {
     
-    
 //MARK: IBOutlets
-    
     @IBOutlet weak var positionLabel: UILabel!
     @IBOutlet weak var locationSlider: VerticalSlider!
     @IBOutlet weak var messageField: UITextField!
@@ -32,17 +30,27 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
         return distanceInMillimeters / 2;
     }
     
+    func mmToSteps(mm: Int) -> Int {
+        return mm * 5;
+    }
+    
 //MARK: Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationSlider.minimumValue = Float(0)
+        locationSlider.maximumValue = Float(80)
+        locationSlider.value = Float(80)
         locationSlider.isUserInteractionEnabled = false
         
         let defaults = UserDefaults.standard
         if  defaults.integer(forKey: "location") != 0 {
            locationOfTheSystem = defaults.integer(forKey: "location")
         }
-           positionLabel.text = String (263.5 + Double(defaults.integer(forKey: "location"))) + " cm"
+        
+        positionLabel.text = String (262 + Double(defaults.integer(forKey: "location"))) + " cm"
+        
+        print(defaults.integer(forKey: "location"))
         
         print("location : ")
         print(locationOfTheSystem)
@@ -50,9 +58,8 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
         // init serial
         serial = BluetoothSerial(delegate: self)
         
-        locationSlider.value = 40
-        locationSlider.minimumValue = 0
-        locationSlider.maximumValue = 80
+        
+        
         
         reloadView()
         
@@ -81,7 +88,10 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
     
     override func viewWillAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
-        positionLabel.text = String (262 + Double(defaults.integer(forKey: "location"))) + " cm"
+        
+        if (defaults.integer(forKey: "location")) == 0 {
+            positionLabel.text = String (262 + Double(defaults.integer(forKey: "location"))) + " cm"
+        }
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
@@ -157,7 +167,6 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
         }
     }
     
-    
 //MARK: UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -168,7 +177,6 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
             messageField.resignFirstResponder()
             return true
         }
-        
         
         var msg = messageField.text!
         var msgInCm = Int(msg)
@@ -221,7 +229,6 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
         messageField.resignFirstResponder()
     }
     
-    
 //MARK: IBActions
 
     @IBAction func barButtonPressed(_ sender: AnyObject) {
@@ -231,5 +238,19 @@ final class SerialViewController: UIViewController, UITextFieldDelegate, Bluetoo
             serial.disconnect()
             reloadView()
         }
+    }
+}
+
+extension String {
+    struct NumFormatter {
+        static let instance = NumberFormatter()
+    }
+    
+    var doubleValue: Double? {
+        return NumFormatter.instance.number(from: self)?.doubleValue
+    }
+    
+    var integerValue: Int? {
+        return NumFormatter.instance.number(from: self)?.intValue
     }
 }
